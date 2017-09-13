@@ -66,15 +66,7 @@ Test Case 3:
 Because , our code should print that the person is old. Three years pass and the person is still old at , so we print the old message again.
 
 The extra line at the end of the output is supposed to be there and is trimmed before being compared against the test case's expected output. If you're failing this challenge, check your logic and review your print statements for spelling errors.
-
-Submissions: 120694
-Max Score: 30
-Difficulty: Easy
-Rate This Challenge:
-    
-More
-Current Buffer (saved locally, editable)     
- 
+  
 JavaScript (Node.js)
 */
  
@@ -98,8 +90,8 @@ function readLine() {
     return input_stdin_array[input_currentline++];
 }
 
-// unchangeable code above
-// my code submission here 
+// code above this line unchangeable
+// my code submission below
 
 function Person(initialAge){
     // Add some more code to run some checks on initialAge
