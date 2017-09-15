@@ -40,6 +40,8 @@ Calculations:
 We round  to the nearest dollar (integer) and then print our result:
 
 The total meal cost is 15 dollars.
+
+JavaScript (Node.js)
 */
 
 'use strict';

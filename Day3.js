@@ -44,6 +44,8 @@ Sample Case 0:
 
 Sample Case 1:  
  and  is even, so it isn't weird. Thus, we print Not Weird.
+ 
+ JavaScript (Node.js)
 */
 
 process.stdin.resume();
