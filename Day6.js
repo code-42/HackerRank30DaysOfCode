@@ -63,19 +63,19 @@ JavaScript (Node.js)
 function processData(input) {
     //Enter your code here
     var argsArr = Array.from(arguments);
-    console.log(argsArr);
+    // console.log(argsArr);
     
     var argsArrLen = argsArr.length;
-    console.log(argsArrLen);
+    // console.log(argsArrLen);
 
     for (var i = 0; i < argsArr.length; i++){
         var splArr = [], evens = [], odds = [];
         splArr = Array.from(argsArr[i].split(''));
 
-        console.log("splArr == " + splArr);
+        // console.log("splArr == " + splArr);
         
         var splArrLen = splArr.length;
-        console.log(splArrLen)
+        // console.log(splArrLen);
 
         for(var j = 0; j < splArr.length; j++){
             j%2 == 0 ? evens.push(splArr[j]) : odds.push(splArr[j]);
@@ -86,15 +86,34 @@ function processData(input) {
     }
 } 
 
-// process.stdin.resume();
-// process.stdin.setEncoding("ascii");
-// _input = "";
-// process.stdin.on("data", function (input) {
-//     _input += input;
-// });
-
-// process.stdin.on("end", function () {
-//   processData(_input);
-// });
 
 processData("Hacker", "Rank");
+
+/*
+the code above works on cloud 9, but not on hackerrank.com
+the code below works on hackerrank.com and is what I submitted
+
+function processData(input) {
+    //Enter your code here
+    var splInp = input.split("\n");
+    for(var i = 1; i < splInp.length; i++){     
+        var evens = [], odds = [];        
+        for(var j = 0; j < splInp[i].length; j++){
+            j%2 == 0 ? evens.push(splInp[i][j]) : odds.push(splInp[i][j]);
+        }                                                      
+    console.log(evens.join('') + " " + odds.join(''));        
+    }
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
+
+*/
