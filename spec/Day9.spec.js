@@ -49,41 +49,48 @@ JavaScript (Node.js)
 
 */
 
-// process.stdin.resume();
-// process.stdin.setEncoding('ascii');
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
 
-// var input_stdin = "";
-// var input_stdin_array = "";
-// var input_currentline = 0;
+var input_stdin = "";
+var input_stdin_array = "";
+var input_currentline = 0;
 
-// process.stdin.on('data', function (data) {
-//     input_stdin += data;
-// });
+process.stdin.on('data', function (data) {
+    input_stdin += data;
+});
 
-// process.stdin.on('end', function () {
-//     input_stdin_array = input_stdin.split("\n");
-//     main();    
-// });
+process.stdin.on('end', function () {
+    input_stdin_array = input_stdin.split("\n");
+    main();    
+});
 
-// function readLine() {
-//     return input_stdin_array[input_currentline++];
-// }
+function readLine() {
+    return input_stdin_array[input_currentline++];
+}
 
 /////////////// ignore above this line ////////////////////
 
-module.exports = function factorial(n) {
+function factorial(n) {
     // Complete this function
-    if (n <= 1){
+    if (n === 0){
         return 1;
     } else {
         return n * factorial(n - 1);
+        console.log(n);
     }
 }
 
-// function main() {
-//     var n = parseInt(readLine());
-//     var result = factorial(n);
-//     process.stdout.write("" + result + "\n");
+function main() {
+    var n = parseInt(readLine());
+    var result = factorial(n);
+    process.stdout.write("" + result + "\n");
 
-// }
+}
 
+describe('factorial', function(){
+    it('should be able to factorialize a number', function(){
+        expect(factorial(3).toEqual(6));
+        console.log('I was able to add two numbers');
+    });
+});
