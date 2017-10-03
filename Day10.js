@@ -80,10 +80,27 @@ JavaScript (Node.js)
 
 /////////////// ignore above this line ////////////////////
 
-module.exports = function maine(val) {
+// module.exports = function main(val) {
+function main(val) {
     // var n = parseInt(readLine());
-    return val;
+    var arr = val.toString(2).split('');
+    // console.log(val.toString(2));
+    var ones = 0, maxOnes = 0;
 
+    for(var i in arr){
+        if(arr[i] === '1'){
+            ones++;
+        } else {
+            ones = 0;
+        }
+    
+        if (ones > maxOnes){
+            maxOnes = ones;
+        }
+    }
+    console.log(maxOnes);
+    return val.toString(2);
+    
 }
 
-// main();
+main(6);
