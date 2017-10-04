@@ -109,18 +109,18 @@ function processData() {
     var notFound = false;
     
     // loop through phoneBook and compare to input query lines
-    // phoneBook.forEach (function(el){
-    //     for (var i = n+1; i < input.length; i++){
-    //         if(el[0] == input[i]){
-    //             console.log(input[i] + "=" + el[1]);
-    //         } else {
-    //             if (notFound == false){
-    //                 console.log('Not found'); 
-    //                 notFound = true;
-    //             }   
-    //         }
-    //     }
-    // });
+    phoneBook.forEach (function(el){
+        for (var i = n+1; i < input.length; i++){
+            if(el[0] == input[i]){
+                console.log(input[i] + "=" + el[1]);
+            } else {
+                if (notFound == false){
+                    console.log('Not found'); 
+                    notFound = true;
+                }   
+            }
+        }
+    });
 });
 
 } 
