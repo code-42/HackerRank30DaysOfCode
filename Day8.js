@@ -89,50 +89,40 @@ function processData() {
 
         // first split inputut string into array of substrings
         var data = input.split('\n');
-        // data = input.toString().split(' ');
-        
-        console.log('94.data == ', data);
 
-    // });
-
-    console.log('97.data.length == ' + data.length);
-    console.log('98.data[0] == ' + data[0]);
-    console.log('99.input[0] == ' + input[0]);
-    
-    // build pb array from data array
-    var pb = [];
-    for(var i=1; i<=data[0]; i++){
-      pb.push(data[i].split(' ')); 
-    }
-    console.log('111.pb == ', pb);
-    
-    // build phoneBook dictionary from pb array
-    var phoneBook = {}; // "associative array" or Object
-    for(var index in pb) {
-        console.log('115. index == ' + index);
-        // console.log('116. pb == ', pb[i]);
-        for(var i = 0; i <1; i++){
-            var key = pb[index][i];
-            var val = pb[index][i+1];
-            phoneBook[key] = val;
-            console.log('119. ' + key + ':' + val);
+        // build pb array from data array
+        var pb = [];
+        for(var i=1; i<=data[0]; i++){
+          pb.push(data[i].split(' ')); 
         }
-    }
-    console.log("103.phoneBook == ", phoneBook);
-
-    // n is the number of key/value pairs in data
-    var n = parseInt(data[0]);
+        console.log('111.pb == ', pb);
+        
+        // build phoneBook dictionary from pb array
+        var phoneBook = {}; // "associative array" or Object
+        for(var index in pb) {
+            console.log('115. index == ' + index);
+            // console.log('116. pb == ', pb[i]);
+            for(var i = 0; i <1; i++){
+                var key = pb[index][i];
+                var val = pb[index][i+1];
+                phoneBook[key] = val;
+            }
+        }
+        console.log("103.phoneBook == ", phoneBook);
     
-    // set notFound so it does not repeat in output
-    var notFound = false;
+        // n is the number of key/value pairs in data
+        var n = parseInt(data[0]);
+        
+        // set notFound so it does not repeat in output
+        var notFound = false;
+        
+        // loop through phoneBook and compare to data query lines
     
-    // loop through phoneBook and compare to data query lines
-
+        
+        // convert array to dictionary object
     
-    // convert array to dictionary object
-
- 
-});
+     
+    });
 
 } 
 
