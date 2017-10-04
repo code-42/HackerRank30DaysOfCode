@@ -106,7 +106,7 @@ function processData() {
     var n = parseInt(input[0]);
     
     // set notFound so it does not repeat in output
-    // var notFound = false;
+    var notFound = false;
     
     // loop through phoneBook and compare to input query lines
     // phoneBook.forEach (function(el){
