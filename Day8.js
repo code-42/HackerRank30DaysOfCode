@@ -125,6 +125,12 @@ function processData() {
 
 } 
 
+/*
+correct output:
+sam=99912222
+Not found
+harry=12299933
+*/
 // below is my HackerRank solution which does not work in cloud9
 /*
 function processData(input) {
