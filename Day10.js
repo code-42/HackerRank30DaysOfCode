@@ -80,8 +80,8 @@ JavaScript (Node.js)
 
 /////////////// ignore above this line ////////////////////
 
-// module.exports = function main(val) {
-function main(val) {
+module.exports = function main(val) {
+// function main(val) {
     // var n = parseInt(readLine());
     var arr = val.toString(2).split('');
     // console.log(val.toString(2));
@@ -100,7 +100,6 @@ function main(val) {
     }
     console.log(maxOnes);
     return val.toString(2);
-    
 }
 
-main(6);
+// main(6);
