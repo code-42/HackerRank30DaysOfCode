@@ -95,20 +95,17 @@ function processData() {
         for(var i=1; i<=data[0]; i++){
           pb.push(data[i].split(' ')); 
         }
-        console.log('111.pb == ', pb);
+        // console.log('98.pb == ', pb);
         
         // build phoneBook dictionary from pb array
-        var phoneBook = {}; // "associative array" or Object
+        var phoneBook = {}; 
         for(var index in pb) {
-            console.log('115. index == ' + index);
-            // console.log('116. pb == ', pb[i]);
             for(var i = 0; i <1; i++){
                 var key = pb[index][i];
                 var val = pb[index][i+1];
                 phoneBook[key] = val;
             }
         }
-        console.log("103.phoneBook == ", phoneBook);
     
         // n is the number of key/value pairs in data
         var n = parseInt(data[0]);
@@ -117,13 +114,21 @@ function processData() {
         var notFound = false;
         
         // loop through phoneBook and compare to data query lines
-    
-        
-        // convert array to dictionary object
-    
-     
-    });
+        for (var prop in phoneBook) {
+            for (var i = n+1; i <= data.length; i++){
+                if(prop == data[i]){
+                    console.log(`${prop}=${phoneBook[prop]}`);
+                } else {
+                    if (notFound == false){
+                        console.log('Not found'); 
+                        notFound = true;
+                    }   
+                }
+            }
+        }
 
+
+    });
 } 
 
 /*
