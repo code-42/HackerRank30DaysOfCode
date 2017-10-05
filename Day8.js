@@ -95,9 +95,8 @@ function processData() {
         for(var i=1; i<=data[0]; i++){
           pb.push(data[i].split(' ')); 
         }
-        // console.log('98.pb == ', pb);
-        
-        // build phoneBook dictionary from pb array
+
+        // build phoneBook dictionary/associative array from pb array
         var phoneBook = {}; 
         for(var index in pb) {
             for(var i = 0; i <1; i++){
@@ -114,10 +113,13 @@ function processData() {
         var notFound = false;
         
         // loop through phoneBook and compare to data query lines
-        for (var prop in phoneBook) {
+        var counter = 0;
+        for (var key in phoneBook) {
+            counter++;
             for (var i = n+1; i <= data.length; i++){
-                if(prop == data[i]){
-                    console.log(`${prop}=${phoneBook[prop]}`);
+                counter++;
+                if(key == data[i]){
+                    console.log(`${key}=${phoneBook[key]}`);
                 } else {
                     if (notFound == false){
                         console.log('Not found'); 
@@ -126,7 +128,7 @@ function processData() {
                 }
             }
         }
-
+        console.log('130. counter == ' + counter);
 
     });
 } 
