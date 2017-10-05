@@ -79,7 +79,6 @@ JavaScript (Node.js)
 // module.exports = function processData() {
 function processData() {
     //Enter your code here
-    
     var fs = require('fs'), input = [];
 
     fs.readFile("Day8inputFile.txt", 'utf8', function(err, input){
@@ -87,51 +86,31 @@ function processData() {
             return console.log("err == ", err);
         };
 
-        // first split inputut string into array of substrings
-        var data = input.split('\n');
+    // first split input string into array of substrings
+    var data = input.split('\n');
 
-        // build pb array from data array
-        var pb = [];
-        for(var i=1; i<=data[0]; i++){
-          pb.push(data[i].split(' ')); 
-        }
-
-        // build phoneBook dictionary/associative array from pb array
-        var phoneBook = {}; 
-        for(var index in pb) {
-            for(var i = 0; i <1; i++){
-                var key = pb[index][i];
-                var val = pb[index][i+1];
-                phoneBook[key] = val;
-            }
-        }
+    // n is the number of key/value pairs in input
+    var n = parseInt(data[0]);
     
-        // n is the number of key/value pairs in data
-        var n = parseInt(data[0]);
-        
-        // set notFound so it does not repeat in output
-        var notFound = false;
-        
-        // loop through phoneBook and compare to data query lines
-        var counter = 0;
-        for (var key in phoneBook) {
-            counter++;
-            for (var i = n+1; i <= data.length; i++){
-                counter++;
-                if(key == data[i]){
-                    console.log(`${key}=${phoneBook[key]}`);
-                } else {
-                    if (notFound == false){
-                        console.log('Not found'); 
-                        notFound = true;
-                    }   
-                }
-            }
-        }
-        console.log('130. counter == ' + counter);
+    // build phoneBook dictionary/associative array from data array
+    var phoneBook = {}, line; 
+    for(var i = 1; i <= n; i++) {
+        line = data[i].split(' ');
+        phoneBook[line[0]]=line[1];
+    }
 
+    // loop through data query lines and compare to phoneBook 
+    var counter = 0;
+    for (var i = n+1; i <= data.length-1; i++){
+          var key = data[i];
+        if(phoneBook[key]){
+            console.log(key + '=' + phoneBook[key]); 
+        } else {
+            console.log('Not found'); 
+        }   
+    }  
     });
-} 
+}
 
 /*
 correct output:
@@ -140,53 +119,5 @@ Not found
 harry=12299933
 */
 
-
-// below is my first HackerRank solution which does not work in cloud9
-// and does not pass all the test cases
-/*
-function processData(input) {
-    //Enter your code here
-    // first split input string into array of substrings
-    var data = input.split('\n');
-
-    // build phoneBook array from data array
-    var phoneBook = [];
-    for(var i=1; i<=data[0]; i++){
-       phoneBook.push(data[i].split(' ')); 
-    }
-    
-    // n is the number of key/value pairs in input
-    var n = parseInt(data[0]);
-    
-    // set notFound so it does not repeat in output
-    var notFound = false;
-    
-    // loop through phoneBook and compare to input query lines
-    phoneBook.forEach (function(el){
-        for (var i = n+1; i < data.length; i++){
-            if(el[0] == data[i]){
-                console.log(data[i] + "=" + el[1]);
-            } else {
-                if (notFound == false){
-                    console.log('Not found'); 
-                    notFound = true;
-                }   
-            }
-        }
-    });
-} 
-
-process.stdin.resume();
-process.stdin.setEncoding("ascii");
-_input = "";
-process.stdin.on("data", function (input) {
-    _input += input;
-});
-
-process.stdin.on("end", function () {
-   processData(_input);
-});
-
-*/
 
 processData();

@@ -1,7 +1,12 @@
-3
+6
 sam 99912222
 tom 11122222
 harry 12299933
+ed 111
+ted 222
+fred 333
 sam
 edward
 harry
+joe
+fred
