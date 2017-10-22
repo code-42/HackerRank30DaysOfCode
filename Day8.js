@@ -77,6 +77,7 @@ JavaScript (Node.js)
 
 // function processData(input) {
 // module.exports = function processData() {
+// module.exprorts is used for testing with npm run test
 function processData() {
     //Enter your code here
     var fs = require('fs'), input = [];

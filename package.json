@@ -4,7 +4,7 @@
   "description": "HackerRank 30 Days of Code",
   "main": "",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --watch"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-files": "^1.4.0",
+    "chai-fs": "^1.0.0",
     "jasmine": "^2.8.0",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
